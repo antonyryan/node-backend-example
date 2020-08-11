@@ -17,7 +17,7 @@ routes.get('/client', async (req: Request, res: Response) => {
 
 routes.get('/client/:id', async (req: Request, res: Response) => {
   const client = await get(Number(req.params.id));
-  if (client) {
+  if (!client) {
     res.status(404);
     return res.send('Client not found!');
   }
