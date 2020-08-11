@@ -1,5 +1,4 @@
 import '../../utils/env';
-import '../../utils/connection';
 import { logger } from '../../utils';
 
 import app from '../../app';

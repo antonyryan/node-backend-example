@@ -1,13 +1,13 @@
 import { DeleteResult } from 'typeorm';
-import { connection } from '../../utils/connection';
 import { Client } from './model';
+import createConnection from '../../utils/connectionManager';
 
 /**
  * Get one client by ID
  * @param id ID of client
  */
-export async function get(id: number): Promise<Client> {
-  const conn = await connection;
+export async function get(id: number): Promise<Client|undefined> {
+  const conn = await createConnection();
   const clientRepository = conn.getRepository<Client>(Client);
   return clientRepository.findOne(id);
 }
@@ -15,7 +15,7 @@ export async function get(id: number): Promise<Client> {
  * Return a list of clients
  */
 export async function list(): Promise<Array<Client>> {
-  const conn = await connection;
+  const conn = await createConnection();
   const clientRepository = conn.getRepository<Client>(Client);
   return clientRepository.find();
 }
@@ -24,7 +24,7 @@ export async function list(): Promise<Array<Client>> {
  * @param newClient Object with client data to be saved
  */
 export async function create(newClient: Client): Promise<Client> {
-  const conn = await connection;
+  const conn = await createConnection();
   const clientRepository = conn.getRepository<Client>(Client);
   return clientRepository.create({
     ...newClient,
@@ -35,7 +35,7 @@ export async function create(newClient: Client): Promise<Client> {
  * @param id ID of client
  */
 export async function remove(id: number): Promise<DeleteResult> {
-  const conn = await connection;
+  const conn = await createConnection();
   const clientRepository = conn.getRepository<Client>(Client);
   return clientRepository.delete(id);
 }
