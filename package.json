@@ -2,12 +2,11 @@
   "name": "node-backend-example",
   "version": "0.1.0",
   "description": "A example REST API example made with Node.js",
-  "main": "src/app.ts",
+  "main": "src/bin/www/server.ts",
   "scripts": {
-    "test": "jest .",
-    "dev": "node bundler.dev.js",
-    "build": "parcel build -t node src/server.ts",
-    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+    "test": "jest",
+    "dev": "env NODE_ENV=development nodemon",
+    "build": "npx tsc",
     "db:migrate": "npm run typeorm -- migration:run",
     "db:revert": "npm run typeorm -- migration:revert",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
