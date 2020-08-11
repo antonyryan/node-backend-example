@@ -3,17 +3,17 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Client {
     @PrimaryGeneratedColumn()
-    id: number;
+    id!: number;
 
     @Column()
-    companyName: string;
+    companyName!: string;
 
-    @Column({ nullable: true })
-    fantasyName: string;
+    @Column({ type: 'varchar', nullable: true })
+    fantasyName: string | undefined;
 
     @Column()
-    cnpj: string;
+    cnpj!: string;
 
     @Column('date')
-    creationDate: Date;
+    creationDate!: Date;
 }
