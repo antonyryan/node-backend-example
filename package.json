@@ -12,6 +12,7 @@
   "author": "Andre L. Adriano",
   "license": "MIT",
   "devDependencies": {
+    "@tsconfig/node12": "^1.0.7",
     "@types/cors": "^2.8.7",
     "@types/express": "^4.17.7",
     "@types/jest": "^26.0.9",
