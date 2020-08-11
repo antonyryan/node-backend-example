@@ -26,7 +26,7 @@ export async function list(): Promise<Array<Client>> {
 export async function create(newClient: Client): Promise<Client> {
   const conn = await createConnection();
   const clientRepository = conn.getRepository<Client>(Client);
-  return clientRepository.create({
+  return clientRepository.save({
     ...newClient,
   });
 }
