@@ -1,3 +1,5 @@
 import { config } from 'dotenv';
 
-config({ path: '.env.dev' });
+const path = process.env.NODE_ENV === 'development' ? '.env.dev' : '.env';
+
+config({ path });
