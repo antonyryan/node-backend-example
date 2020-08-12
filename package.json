@@ -1,6 +1,6 @@
 {
   "name": "node-backend-example",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A example REST API example made with Node.js",
   "main": "src/bin/www/server.ts",
   "scripts": {
