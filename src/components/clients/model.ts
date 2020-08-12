@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Client {
     @PrimaryGeneratedColumn()
-    id!: number;
+    id?: number;
 
     @Column()
     companyName!: string;
@@ -15,5 +15,5 @@ export class Client {
     cnpj!: string;
 
     @Column('date')
-    creationDate!: Date;
+    creationDate!: string;
 }
