@@ -39,3 +39,9 @@ export async function remove(id: number): Promise<DeleteResult> {
   const clientRepository = conn.getRepository<Client>(Client);
   return clientRepository.delete(id);
 }
+
+export const rules = {
+  companyName: (value: unknown): boolean => !!value,
+  cnpj: (value: unknown): boolean => !!value && (value as string).length === 14,
+  creationDate: (value: unknown): boolean => !!value && (!!(value as string).match(/[1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]/)),
+};
