@@ -42,6 +42,6 @@ export async function remove(id: number): Promise<DeleteResult> {
 
 export const rules = {
   companyName: (value: unknown): boolean => !!value,
-  cnpj: (value: unknown): boolean => !!value && (value as string).length === 14,
+  cnpj: (value: unknown): boolean => !!value && /^[0-9]{14}$/.test(value as string),
   creationDate: (value: unknown): boolean => !!value && (!!(value as string).match(/[1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]/)),
 };
