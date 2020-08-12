@@ -1,10 +1,17 @@
 import { Router, Response, Request } from 'express';
-import { create, list, get, remove } from './controller';
+import { validatePost } from '../../middlewares';
+import {
+  create,
+  list,
+  get,
+  remove,
+  rules,
+} from './controller';
 import { Client } from './model';
 
 const routes = Router();
 
-routes.post('/client', async (req: Request, res: Response) => {
+routes.post('/client', validatePost(rules), async (req: Request, res: Response) => {
   const client: Client = req.body;
   const newClient = await create(client);
   return res.json(newClient);
