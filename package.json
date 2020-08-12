@@ -10,7 +10,7 @@
     "db:migrate": "npm run typeorm -- migration:run",
     "db:revert": "npm run typeorm -- migration:revert",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "docs": "npx apidoc -i src/ -o src/docs"
+    "docs": "npx apidoc -i src/ -o docs/"
   },
   "author": "Andre L. Adriano",
   "license": "MIT",
