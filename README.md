@@ -65,12 +65,6 @@ npm run test
 npm run docs
 ```
 
-## Author
-
-👤 **Andre L. Adriano**
-
-* Github: [@andre000](https://github.com/andre000)
-* LinkedIn: [@andreadriano](https://linkedin.com/in/andreadriano)
 
 ## Show your support
 
